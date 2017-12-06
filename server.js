@@ -3,6 +3,8 @@ var MongoClient = require('mongodb').MongoClient;
 var bodyParser = require('body-parser');
 var request = require('request');
 var path = require('path');
+var dotenv = require('dotenv').config();
+var imageSearch = require('node-google-image-search');
 
 var app = express();
 
@@ -17,4 +19,11 @@ app.listen(PORT, function(){
 
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '/views/index.html'));
+});
+
+app.get('/:query', function(req, res){
+    var query = req.params.query;
+    imageSearch(query, function(results){
+        res.send(results);
+    }, 0, 5);
 });

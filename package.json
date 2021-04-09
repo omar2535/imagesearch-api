@@ -12,7 +12,7 @@
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "mongodb": "^3.0.0-rc0",
+    "mongodb": "^3.1.13",
     "node-google-image-search": "^1.0.3",
     "request": "^2.83.0"
   }
